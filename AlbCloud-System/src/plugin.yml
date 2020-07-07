@@ -1,0 +1,4 @@
+name: AlbCloud-System
+author: Cmon_
+version: 0.01.01b
+main: cloud.alb.system.AlbCloudSystem
