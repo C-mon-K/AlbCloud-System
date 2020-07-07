@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
+import cloud.alb.system.server.config.Config;
+
 public class QuitListener implements Listener{
 
 	public QuitListener(Plugin plugin) {
@@ -17,7 +19,7 @@ public class QuitListener implements Listener{
 	public void onQuit(PlayerQuitEvent e) {
 		
 		Player p = e.getPlayer();
-		e.setQuitMessage("§8[§c-§8] §r" + p.getDisplayName());
+		e.setQuitMessage(Config.getQuitMsg(p));
 		
 	}
 	
