@@ -18,6 +18,10 @@ public enum Rank {
 		else return "§7";
 	}
 	
+	public static int getRankWeight(Rank rank) {
+		return Config.getRankWeight(rank);
+	}
+	
 	public static Rank getPlayerRank(Player p) {
 		if(p.hasPermission(Config.getRankPermission(Rank.ADMIN))) return Rank.ADMIN;
 		if(p.hasPermission(Config.getRankPermission(Rank.MODERATOR))) return Rank.MODERATOR;

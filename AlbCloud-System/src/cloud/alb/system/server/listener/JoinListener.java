@@ -8,6 +8,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
 import cloud.alb.system.player.ranks.Rank;
+import cloud.alb.system.player.ranks.RankedScoreboard;
 import cloud.alb.system.server.config.Config;
 
 public class JoinListener implements Listener{
@@ -20,9 +21,10 @@ public class JoinListener implements Listener{
 	public static void onJoin(PlayerJoinEvent e) {
 		
 		Player p = e.getPlayer();
-		Rank.setPlayerRankedName(p);
 		
+		Rank.setPlayerRankedName(p);
 		e.setJoinMessage(Config.getJoinMsg(p));
+		RankedScoreboard.addPlayer(p);
 		
 	}
 	

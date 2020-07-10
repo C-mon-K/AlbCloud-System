@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
+import cloud.alb.system.player.ranks.RankedScoreboard;
 import cloud.alb.system.server.config.Config;
 
 public class QuitListener implements Listener{
@@ -19,7 +20,9 @@ public class QuitListener implements Listener{
 	public void onQuit(PlayerQuitEvent e) {
 		
 		Player p = e.getPlayer();
+		
 		e.setQuitMessage(Config.getQuitMsg(p));
+		RankedScoreboard.removePlayer(p);
 		
 	}
 	
